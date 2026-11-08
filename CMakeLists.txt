@@ -28,8 +28,11 @@ endif()
 set(HAILSTONE_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(HAILSTONE_BROWSER OFF CACHE BOOL "" FORCE)
 # Only what the studio links is built (hailstone_engine, hailstone_texpack and their shaders); not the client or its tools.
-add_subdirectory(${HAILSTONE_CLIENT_DIR} hailstone EXCLUDE_FROM_ALL)
-set(HAILSTONE_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/hailstone)
+# Its build folder is "h", not "hailstone": every object's path starts with it, and hailstone_engine.lib's lib command
+# under MSVC (469 objects) was 34,300 characters with the longer name, over the 32,767 a Windows command line holds;
+# MSVC under Wine hangs on that rather than failing. With "h" it is about 30,600.
+add_subdirectory(${HAILSTONE_CLIENT_DIR} h EXCLUDE_FROM_ALL)
+set(HAILSTONE_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/h)
 
 if(MSVC)
   set(TEXSTUDIO_WARNINGS /W4 /permissive- /utf-8)
