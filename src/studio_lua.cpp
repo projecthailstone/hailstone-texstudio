@@ -187,6 +187,15 @@ int State(lua_State* L) {
     lua_setfield(L, -2, "packs");
 
     set_bool(L, "lowImpact", s.low_impact());
+    set_bool(L, "materials", s.materials());
+    set_bool(L, "materialsAvailable", s.materials_available());
+    set_string(L, "materialsZones", s.materials_zones());
+    set_bool(L, "trees", s.trees());
+    set_bool(L, "treesAvailable", s.trees_available());
+    set_string(L, "treesZones", s.trees_zones());
+    set_bool(L, "preparing", s.preparing());
+    set_string(L, "prepMessage", s.prep_message());
+    set_bool(L, "prepFailed", s.prep_state() == Studio::PrepState::Failed);
     if (auto j = s.job_status()) {
         lua_newtable(L);
         set_string(L, "state", std::string(texpack::state_name(j->state)));
@@ -264,6 +273,8 @@ int Set(lua_State* L) {
     else if (key == "buildAll") s.set_build_all(lua_toboolean(L, 2) != 0);
     else if (key == "packName") s.set_pack_name(arg_string(L, 2));
     else if (key == "lowImpact") s.set_low_impact(lua_toboolean(L, 2) != 0);
+    else if (key == "materials") s.set_materials(lua_toboolean(L, 2) != 0);
+    else if (key == "trees") s.set_trees(lua_toboolean(L, 2) != 0);
     else if (key == "noGroups") s.select_no_groups();
     else if (key.starts_with("group:")) s.set_group_selected(key.substr(6), lua_toboolean(L, 2) != 0);
     else return luaL_error(L, "studio.Set: unknown key '%s'", key.c_str());

@@ -18,6 +18,7 @@
 #include <vector>
 
 #include "core/config.h"
+#include "texpack/materials.h"
 #include "texpack/model_catalog.h"
 #include "ncnn_model.h"
 #include "texpack/pack_job.h"
@@ -140,6 +141,29 @@ public:
     bool use_pack(const std::string& name); // sets display.texture_folder
     bool clear_pack(); // deletes the pack's by-hash/ and pack.ini (the pack folder stays)
 
+    // ---- photo materials (the client's texpack/materials.h): the zones the shipped rules name get their ground
+    // tiles rebuilt from Poly Haven's CC0 photo textures, fetched once into the cache, instead of upscaled
+    bool materials() const { return materials_; }
+    void set_materials(bool on);
+    // The zones the rules cover ("Qeynos Hills"), or why there are none.
+    std::string materials_zones() const { return materials_zones_; }
+    bool materials_available() const { return materials_rules_.has_value(); }
+    // Generated trees (the client's texpack/trees.h): the trees the same rules name are grown again, fitted to the
+    // game's (the same trunks, so the same collision), as replacement models in the pack.
+    bool trees() const { return trees_; }
+    void set_trees(bool on);
+    std::string trees_zones() const { return trees_zones_; } // "Qeynos Hills", or why there are none
+    bool trees_available() const { return materials_rules_ && !materials_rules_->trees.empty(); }
+
+    // A build with materials first fetches them and measures the zones, on a thread; the job starts after.
+    enum class PrepState : std::uint8_t { None, Fetching, Planning, Trees, Failed };
+    PrepState prep_state() const { return prep_state_; }
+    std::string prep_message() const;
+    std::string prep_error() const { return prep_error_; }
+    bool preparing() const {
+        return prep_state_ == PrepState::Fetching || prep_state_ == PrepState::Planning || prep_state_ == PrepState::Trees;
+    }
+
     // ---- the build
     bool start(std::string* why);
     void pause();
@@ -234,6 +258,30 @@ private:
     std::optional<texpack::PackInfo> pack_info_;
     std::vector<PackEntry> packs_;
     double packs_at_ = -1;
+
+    void launch_job(std::shared_ptr<const texpack::MaterialPlan> plan, std::shared_ptr<texpack::MaterialLibrary> library);
+    void take_prep();
+
+    bool materials_ = false;
+    std::optional<texpack::MaterialRules> materials_rules_;
+    std::string materials_zones_;
+    bool trees_ = false;
+    std::string trees_zones_;
+    std::filesystem::path materials_cache_;
+    std::atomic<PrepState> prep_state_{PrepState::None};
+    std::atomic<std::size_t> prep_done_{0}, prep_total_{0};
+    std::atomic<bool> prep_cancel_{false};
+    std::string prep_error_;
+    std::thread prep_thread_;
+    struct PrepResult {
+        std::shared_ptr<const texpack::MaterialPlan> plan;
+        std::shared_ptr<texpack::MaterialLibrary> library;
+        std::string error;
+        std::vector<std::string> notes;
+        std::size_t trees = 0;
+    };
+    std::mutex prep_mutex_;
+    std::optional<PrepResult> prep_result_;
 
     std::unique_ptr<texpack::PackJob> job_;
     bool low_impact_ = false;

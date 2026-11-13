@@ -173,6 +173,32 @@ local function quality(st, s)
     P.Faint("No GPU answered through Vulkan, so the CPU does the work: dozens of times slower. An up-to-date graphics driver may help.")
     ui.PopTextWrapPos()
   end
+  -- photo materials
+  ui.BeginDisabled(not st.materialsAvailable)
+  local mat, matc = ui.Checkbox("Photo ground materials", st.materials)
+  if matc then studio.Set("materials", mat) end
+  ui.EndDisabled()
+  P.Tip("Rebuilds the ground of the zones listed below from free photo textures instead of upscaling it: grass, "
+    .. "rock, dirt and paths keep the original's layout and colour and gain the photos' detail. The first build "
+    .. "downloads about 25 MB of textures from Poly Haven.")
+  ui.PushTextWrapPos(0)
+  if st.materialsAvailable then
+    P.Faint("Zones so far: " .. st.materialsZones .. ". Powered by Poly Haven (polyhaven.com), CC0.")
+  else
+    P.Faint("Not available: " .. st.materialsZones)
+  end
+  ui.PopTextWrapPos()
+  -- generated trees
+  ui.BeginDisabled(not st.treesAvailable)
+  local tr, trc = ui.Checkbox("Generated trees", st.trees)
+  if trc then studio.Set("trees", tr) end
+  ui.EndDisabled()
+  P.Tip("Grows new trees in place of the old flat-card ones in the zones listed below: each stands on the old "
+    .. "trunk, so where you can walk is unchanged, and fills the old leaves' shape in their colours. The bark is "
+    .. "a free photo texture from Poly Haven.")
+  ui.PushTextWrapPos(0)
+  P.Faint((st.treesAvailable and "Zones so far: " or "Not available: ") .. st.treesZones .. ".")
+  ui.PopTextWrapPos()
   local w = st.worker
   if w.state == "failed" or (w.state == "none" and w.error ~= "") then
     P.Status({ text = w.error, error = true }, false, s)
@@ -274,6 +300,13 @@ local function buildSection(st, s)
   local _, lh = ui.CalcTextSize("Ag")
   local bh = lh + 14 * s
   ui.Dummy(0, 4 * s)
+  if st.preparing then
+    ui.PushTextWrapPos(0)
+    P.Muted(st.prepMessage)
+    ui.PopTextWrapPos()
+    if P.Danger("Stop", -1, bh, true) then studio.Stop() end
+    return
+  end
   if not running then
     local e = st.estimate
     local room = e.freeBytes < 0 or e.freeBytes >= e.todoBytes + 1e9
@@ -283,6 +316,7 @@ local function buildSection(st, s)
       startError = (not ok) and why or nil
     end
     if startError then P.Status({ text = startError, error = true }, false, s) end
+    if st.prepFailed then P.Status({ text = st.prepMessage, error = true }, false, s) end
   else
     local w = (ui.GetContentRegionAvail() - 8 * s) / 2
     if j.state == "paused" then

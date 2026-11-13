@@ -115,6 +115,7 @@ add_custom_command(TARGET texstudio POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${HAILSTONE_CLIENT_DIR}/icons ${TEXSTUDIO_DIST}/icons
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${HAILSTONE_CLIENT_DIR}/pictures ${TEXSTUDIO_DIST}/pictures
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/models ${TEXSTUDIO_DIST}/models
+  COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/materials ${TEXSTUDIO_DIST}/materials
   VERBATIM)
 # The shared libraries it was linked with that the build made (SDL3 when it was fetched): Windows has no rpath, and
 # on Linux the $ORIGIN rpath finds them beside it.

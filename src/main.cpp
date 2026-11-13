@@ -8,7 +8,7 @@
 //                                       Hailstone folder, else the studio's own)
 //   texstudio [--frames N [--screenshot FILE]]   quit after N frames (a smoke test), the last one saved
 //   texstudio --build [--pack NAME] [--preset fast|standard|high] [--zones KEY,...] [--device N|cpu]
-//             [--assets DIR] [--low-impact]
+//             [--assets DIR] [--low-impact] [--materials on|off] [--trees on|off]
 //       builds without a window, with the window's settings unless given (and saves none of them); --zones takes
 //       zone short names and "shared"
 //   texstudio --devices                 lists the devices --device numbers
@@ -154,6 +154,8 @@ struct BuildArgs {
     std::string pack, preset, assets, device;
     std::vector<std::string> zones;
     bool low_impact = false;
+    std::optional<std::string> materials; // "on" / "off"; unset: the window's choice
+    std::optional<std::string> trees;     // likewise
 };
 
 std::vector<std::string> split_list(const std::string& s) {
@@ -213,6 +215,8 @@ int run_headless(const BuildArgs& a) {
             for (const std::string& z : a.zones) studio.set_group_selected(z, true);
         }
         studio.set_low_impact(a.low_impact);
+        if (a.materials) studio.set_materials(*a.materials == "on");
+        if (a.trees) studio.set_trees(*a.trees == "on");
         while (studio.scan_state() == texstudio::Studio::ScanState::Scanning ||
                studio.worker_state() == texstudio::Studio::WorkerState::Loading) {
             studio.update();
@@ -242,6 +246,20 @@ int run_headless(const BuildArgs& a) {
         auto last = std::chrono::steady_clock::now() - 1h;
         for (;;) {
             studio.update();
+            if (studio.preparing()) {
+                if (std::chrono::steady_clock::now() - last > 5s) {
+                    last = std::chrono::steady_clock::now();
+                    std::printf("%s\n", studio.prep_message().c_str());
+                    std::fflush(stdout);
+                }
+                std::this_thread::sleep_for(100ms);
+                continue;
+            }
+            if (studio.prep_state() == texstudio::Studio::PrepState::Failed) {
+                std::fprintf(stderr, "texstudio: %s\n", studio.prep_message().c_str());
+                code = 1;
+                break;
+            }
             auto st = studio.job_status();
             if (!st) break;
             const bool done = st->state == texpack::JobStatus::State::Done ||
@@ -300,6 +318,22 @@ int main(int argc, char** argv) {
         else if (a == "--device") b.device = next();
         else if (a == "--assets") b.assets = next();
         else if (a == "--low-impact") b.low_impact = true;
+        else if (a == "--materials") {
+            const std::string v = next();
+            if (v != "on" && v != "off") {
+                std::fprintf(stderr, "texstudio: --materials takes on or off\n");
+                return 2;
+            }
+            b.materials = v;
+        }
+        else if (a == "--trees") {
+            const std::string v = next();
+            if (v != "on" && v != "off") {
+                std::fprintf(stderr, "texstudio: --trees takes on or off\n");
+                return 2;
+            }
+            b.trees = v;
+        }
         else if (a == "--frames" && i + 1 < argc) frames = std::atoi(argv[++i]);
         else if (a == "--screenshot" && i + 1 < argc) screenshot = argv[++i];
         else if (a == "--data-dir" && i + 1 < argc) {
