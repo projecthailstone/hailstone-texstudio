@@ -1,0 +1,57 @@
+# Qeynos Hills: texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path's flagstones), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it (pine, broadleaf, willow,
+# or auto: pine or broadleaf by its shape).
+
+tree tree1 = pine pinebark      # the dark spruce
+tree bpine1 = pine pinebark     # the tall yellow pine
+tree treetry = broadleaf bark
+tree tree71 = willow bark
+
+xgrassdirt2 = grass
+
+hhdrock = greyrock
+hhdrockgrass = grass greyrock
+hhdrockgrass1 = grass greyrock
+hhdrockgrass2 = grass greyrock
+hhdrockgrass3 = grass greyrock
+hhdrockgrass4 = grass greyrock
+hhdrockgrass5 = grass greyrock
+rockisle1 = grass greyrock
+
+rock1qrg = purplerock
+rockgrass1qrg = grass purplerock
+rockgrass3qrg = grass purplerock
+rockgrass4qrg = grass purplerock
+rockgrass5qrg = grass purplerock
+qrgrockisle = grass purplerock
+rockisle2 = grass purplerock
+ruingrnd = grass purplerock
+
+bbstone = slate
+bbstonegrass1 = grass slate
+bbstonegrass2 = grass slate
+bbstonegrass3 = grass slate
+bbstonegrass4 = grass slate
+bbstonegrass5 = grass slate
+
+drymud1 = dirt
+drymud2 = grass dirt
+drymud3 = grass dirt
+drymud4 = grass dirt
+drymud5 = grass dirt
+xgrassdirt = grass dirt
+
+xgrassmud = grass mud
+xgrassmud1 = grass mud
+
+xdrpath = grass flagstone sharp
+xdrpathlr = grass flagstone sharp
+xpath45l = grass flagstone sharp
+xpath45r = grass flagstone sharp
+xpathend = grass flagstone sharp
+xpatht = grass flagstone sharp
+xp45ltodown = grass flagstone sharp
+xp45ltoup = grass flagstone sharp
+xp45rtodown = grass flagstone sharp
+xp45rtoup = grass flagstone sharp

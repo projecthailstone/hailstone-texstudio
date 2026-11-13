@@ -6,10 +6,12 @@
 
 #include "core/asset_folder.h"
 #include "core/asset_folder_choice.h"
+#include "core/game_dir.h"
 #include "core/log.h"
 #include "core/png_write.h"
 #include "game/zone_names.h"
 #include "platform/paths.h"
+#include "texpack/trees.h"
 
 namespace hailstone::texstudio {
 
@@ -114,6 +116,27 @@ Studio::Studio(fs::path data_dir) : data_dir_(std::move(data_dir)) {
     fs::create_directories(preview_dir_, ec);
     fs::create_directories(data_dir_ / "texstudio" / "models", ec);
 
+    // The photo materials' rules ship with the studio (materials/); their images are fetched into the cache.
+    materials_cache_ = platform::cache_dir() / "texstudio" / "polyhaven";
+    {
+        std::string why;
+        materials_rules_ = texpack::load_material_rules(platform::install_dir() / "materials", &why);
+        if (materials_rules_) {
+            std::set<std::string> zones;
+            for (const auto& t : materials_rules_->tiles) zones.insert(t.zone);
+            for (const auto& z : zones) materials_zones_ += (materials_zones_.empty() ? "" : ", ") + group_title(z);
+            log::info("texture studio: photo materials for {}", materials_zones_);
+            std::set<std::string> tree_zones;
+            for (const auto& t : materials_rules_->trees) tree_zones.insert(t.zone);
+            for (const auto& z : tree_zones) trees_zones_ += (trees_zones_.empty() ? "" : ", ") + group_title(z);
+            if (tree_zones.empty()) trees_zones_ = "no zone has tree rules";
+        } else {
+            materials_zones_ = why;
+            trees_zones_ = why;
+            log::warn("texture studio: no photo materials: {}", why);
+        }
+    }
+
     devices_ = texpack::list_devices();
     models_ = texpack::list_models({platform::install_dir() / "models", data_dir_ / "texstudio" / "models"});
     for (const auto& d : devices_) log::info("texture studio: device {} ({}, {} MB)", d.name, d.type, d.memory_mb);
@@ -133,7 +156,9 @@ Studio::Studio(fs::path data_dir) : data_dir_(std::move(data_dir)) {
 
 Studio::~Studio() {
     scan_cancel_ = true;
+    prep_cancel_ = true;
     if (scan_thread_.joinable()) scan_thread_.join();
+    if (prep_thread_.joinable()) prep_thread_.join();
     job_.reset();
     worker_.reset();
     save_settings();
@@ -156,6 +181,8 @@ void Studio::load_settings() {
     pack_name_ = settings_.get_string("pack", "hd");
     if (!valid_pack_name(pack_name_)) pack_name_ = "hd";
     low_impact_ = settings_.get_bool("low_impact", false);
+    materials_ = settings_.get_bool("materials", false);
+    trees_ = settings_.get_bool("trees", false);
     const std::string device = settings_.get_string("device");
     device_ = 0;
     for (std::size_t i = 0; i < devices_.size(); ++i)
@@ -180,6 +207,8 @@ void Studio::save_settings() {
     settings_.set("color_model", color_model_);
     settings_.set_int("scale", static_cast<int>(scale_));
     settings_.set_bool("maps", maps_);
+    settings_.set_bool("materials", materials_);
+    settings_.set_bool("trees", trees_);
     settings_.set_bool("build_all", build_all_);
     std::string groups;
     for (const auto& g : selected_) groups += (groups.empty() ? "" : ",") + g;
@@ -212,6 +241,7 @@ void Studio::update() {
             }
         }
     }
+    take_prep();
     // The speed test.
     if (measuring_ && measured_ && *measured_ != 0) {
         const double r = *measured_;
@@ -691,7 +721,7 @@ bool Studio::start(std::string* why) {
         if (why) *why = std::move(w);
         return false;
     };
-    if (job_ && !job_->finished()) return fail("A build is running.");
+    if ((job_ && !job_->finished()) || preparing()) return fail("A build is running.");
     if (scan_state_ != ScanState::Ready) return fail("The game's files are not read yet.");
     if (!worker_ || worker_->failed()) return fail(worker_error().empty() ? "The models are not loaded." : worker_error());
     if (!valid_pack_name(pack_name_)) return fail("The pack's name may hold only letters, digits, '-', '_' and '.'.");
@@ -699,11 +729,126 @@ bool Studio::start(std::string* why) {
     // (a gigabyte to spare: the system and Hailstone need room too)
     if (estimate_.free_bytes >= 0 && estimate_.todo > 0 && estimate_.free_bytes < estimate_.todo_bytes + 1e9)
         return fail("There is not enough free disk space for it: choose fewer zones, or a smaller size.");
+    prep_error_.clear();
+    const bool trees = trees_ && trees_available();
+    if ((!materials_ && !trees) || !materials_rules_) {
+        launch_job(nullptr, nullptr);
+        return true;
+    }
+    // The trees of the zones being built.
+    texpack::MaterialRules rules = *materials_rules_;
+    if (!trees) rules.trees.clear();
+    else if (!build_all_)
+        std::erase_if(rules.trees, [&](const texpack::TreeRule& t) { return !selected_.contains(t.zone); });
+    const bool materials = materials_;
+    // Photo materials and trees: fetch what the cache lacks, measure the zones and grow the trees first, then build
+    // (take_prep).
+    if (prep_thread_.joinable()) prep_thread_.join();
+    prep_cancel_ = false;
+    prep_done_ = 0;
+    prep_total_ = 0;
+    prep_state_ = PrepState::Fetching;
+    job_.reset();
+    prep_thread_ = std::thread([this, rules = std::move(rules), materials, cache = materials_cache_, pack = pack_dir(),
+                                assets = fs::path(assets_path_), textures = selected_textures(), size = 512u * scale_] {
+        PrepResult r;
+        try {
+            texpack::FetchOptions o;
+            o.user_agent = "Hailstone-TextureStudio/" TEXSTUDIO_VERSION;
+            o.cancelled = [this] { return prep_cancel_.load(); };
+            o.progress = [this](std::size_t done, std::size_t total) {
+                prep_done_ = done;
+                prep_total_ = total;
+            };
+            if (!texpack::fetch_materials(rules, cache, o, &r.error)) {
+                if (prep_cancel_) r.error = "Stopped.";
+                throw std::runtime_error(r.error);
+            }
+            auto library = texpack::MaterialLibrary::load(rules, cache, &r.error);
+            if (!library) throw std::runtime_error(r.error);
+            GameDir game(assets);
+            if (materials) {
+                prep_state_ = PrepState::Planning;
+                r.plan = std::make_shared<texpack::MaterialPlan>(texpack::plan_materials(rules, game, textures, size, &r.notes));
+            }
+            if (!rules.trees.empty()) {
+                prep_state_ = PrepState::Trees;
+                prep_done_ = 0;
+                prep_total_ = rules.trees.size();
+                texpack::TreeBuildOptions t;
+                t.cancelled = o.cancelled;
+                t.progress = o.progress;
+                r.trees = texpack::build_trees(rules, game, pack, library.get(), t, &r.notes);
+                if (prep_cancel_) throw std::runtime_error("Stopped.");
+            }
+            r.library = std::move(library);
+        } catch (const std::exception& e) {
+            r.error = e.what();
+        }
+        std::lock_guard lock(prep_mutex_);
+        prep_result_ = std::move(r);
+    });
+    return true;
+}
+
+void Studio::take_prep() {
+    std::optional<PrepResult> r;
+    {
+        std::lock_guard lock(prep_mutex_);
+        r.swap(prep_result_);
+    }
+    if (!r) return;
+    if (prep_thread_.joinable()) prep_thread_.join();
+    for (const std::string& n : r->notes) log::info("texture studio: photo materials: {}", n);
+    if (prep_cancel_) {
+        prep_state_ = PrepState::None;
+        return;
+    }
+    if (!r->error.empty()) {
+        log::warn("texture studio: photo materials: {}", r->error);
+        prep_error_ = r->error;
+        prep_state_ = PrepState::Failed;
+        return;
+    }
+    prep_state_ = PrepState::None;
+    if (r->plan) log::info("texture studio: {} textures from photo materials", r->plan->tiles.size());
+    if (r->trees) log::info("texture studio: {} trees grown", r->trees);
+    launch_job(std::move(r->plan), r->plan ? std::move(r->library) : nullptr);
+}
+
+std::string Studio::prep_message() const {
+    switch (prep_state_.load()) {
+    case PrepState::Fetching:
+        if (prep_total_ == 0) return "Looking for the photo materials...";
+        return "Fetching the photo materials from Poly Haven: " + std::to_string(prep_done_.load()) + " of " +
+               std::to_string(prep_total_.load());
+    case PrepState::Planning: return "Measuring the zones for the photo materials...";
+    case PrepState::Trees:
+        return "Growing the trees: " + std::to_string(prep_done_.load()) + " of " + std::to_string(prep_total_.load());
+    case PrepState::Failed: return "The photo materials could not be made ready: " + prep_error_;
+    case PrepState::None: break;
+    }
+    return {};
+}
+
+void Studio::set_materials(bool on) {
+    materials_ = on;
+    settings_dirty_ = true;
+}
+
+void Studio::set_trees(bool on) {
+    trees_ = on;
+    settings_dirty_ = true;
+}
+
+void Studio::launch_job(std::shared_ptr<const texpack::MaterialPlan> plan, std::shared_ptr<texpack::MaterialLibrary> library) {
     texpack::JobOptions o;
     o.pack_dir = pack_dir();
     o.textures = selected_textures();
     o.settings = {scale_, maps_};
     o.low_impact = low_impact_;
+    o.materials = std::move(plan);
+    o.material_library = std::move(library);
     o.info.title = pack_name_;
     o.info.tool_version = "texstudio " TEXSTUDIO_VERSION;
     o.info.color_model = color_model_;
@@ -722,13 +867,12 @@ bool Studio::start(std::string* why) {
     fs::create_directories(o.pack_dir, ec);
     texpack::write_pack_info(o.pack_dir, o.info);
     pack_info_ = o.info;
-    log::info("texture studio: building {} ({} textures, scale {}, maps {})", o.pack_dir.string(), o.textures.size(),
-              scale_, maps_);
+    log::info("texture studio: building {} ({} textures, scale {}, maps {}, photo materials {})", o.pack_dir.string(),
+              o.textures.size(), scale_, maps_, o.materials ? o.materials->tiles.size() : 0);
     measuring_ = false;
     job_.reset();
     job_ = std::make_unique<texpack::PackJob>(std::move(o), *worker_);
     job_finished_seen_ = false;
-    return true;
 }
 
 bool Studio::gpu_found() const {
@@ -742,6 +886,7 @@ void Studio::resume() {
     if (job_) job_->resume();
 }
 void Studio::stop() {
+    if (preparing()) prep_cancel_ = true;
     if (job_) job_->cancel();
 }
 

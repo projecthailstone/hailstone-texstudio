@@ -52,6 +52,31 @@ texture** picks one at random; **Find** looks a texture up by part of its name.
 **Your packs** lists the packs in `textures/`, with the settings and size each was built with, and "Off". Click one
 to make it the pack Hailstone uses.
 
+### Photo ground materials
+
+With **Photo ground materials** on, the ground of the zones the studio has rules for is rebuilt from free photo
+textures instead of upscaled. Grass, rock, dirt, mud and flagstone paths keep the original's layout and colour, so
+the rebuilt tiles still meet the tiles round them, and gain the photos' detail, with normal and roughness maps. Only
+**Qeynos Hills** has rules so far.
+
+The textures come from [Poly Haven](https://polyhaven.com) (CC0). The first build with this option downloads about
+25 MB of them into the studio's cache, and later builds use the cache. A rebuilt tile is 512 times the pack's size on
+a side (1024 for a Standard pack). The rules are text files in the studio's `materials/` folder: `materials.txt` names
+the materials and their Poly Haven textures, and a file per zone (`qeytoqrg.txt`) says which of the zone's textures
+are made of which. The client's `docs/graphics.md` "Photo materials" says how a tile is made. Changing the rules makes
+the affected tiles again on the next build, and turning the option off gives them back to the upscaler.
+
+### Generated trees
+
+With **Generated trees** on, the trees of the zones the studio has tree rules for are grown again as 3D models in
+place of the old ones, a trunk under a few crossed flat cards. Each new tree stands on the old trunk at about its
+width, so the collision (which keeps the old trunk) matches what you see, and fills the shape the old leaves showed,
+in their colours. Pines grow whorls of needle sprays, broadleaf trees grow branches into the crown, willows hang
+strands. The bark is a Poly Haven photo texture (CC0), fetched with the photo materials. The trees go into the pack's
+`models/` folder; Hailstone draws them with the pack. Only **Qeynos Hills** has tree rules so far: lines such as
+`tree tree71 = willow bark` in its zone file (the client's `docs/graphics.md` "Generated trees"). The trees are grown
+again on every build, which takes a few seconds a zone.
+
 ### Speed and size (RX 9060 XT)
 
 - The live game folder of 2026-11 holds 68,582 distinct textures in 3,839 archives. Standard estimates 4 h 36 min and
@@ -65,7 +90,7 @@ to make it the pack Hailstone uses.
 ```sh
 texstudio [--data-dir DIR]
 texstudio --build [--pack NAME] [--preset fast|standard|high] [--zones KEY,...] [--device N|cpu]
-          [--assets DIR] [--low-impact]
+          [--assets DIR] [--low-impact] [--materials on|off] [--trees on|off]
 texstudio --devices
 texstudio --frames N [--screenshot FILE]
 texstudio --version
@@ -76,6 +101,8 @@ texstudio --version
 - **`--build`** builds without a window. It uses the window's saved settings except for the options given, and saves
   none of those options. `--zones` takes zone short names and `shared`. The progress is printed every five seconds.
   It exits with 0 when every texture was made. On Windows it writes to the console it was started from.
+- **`--materials`** turns the photo ground materials on or off for this build.
+- **`--trees`** turns the generated trees on or off for this build.
 - **`--devices`** lists the devices that `--device` numbers.
 - **`--frames`** quits after N frames, saving the last one as a PNG with `--screenshot` (a smoke test).
 

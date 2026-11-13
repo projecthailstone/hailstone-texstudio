@@ -1,0 +1,77 @@
+; Photo materials (README.md "Photo ground materials"): each section is one material, from a Poly Haven texture
+; (polyhaven.com, CC0). The zone files beside this one say which of a zone's textures are made of which.
+;
+;   asset    the Poly Haven id; its 1K diffuse, nor_dx, rough and disp maps are fetched
+;   metres   the ground one repeat of the photo shows
+;   magnify  drawn this many times its real size
+;   detail   strength of the photo's detail
+;   shading  how much of the original's own painted shading stays (rock reads better with some)
+;   colour   the material's colour in the game's art (0..1): where splitting a two-material tile starts
+
+[grass]
+asset = leafy_grass
+metres = 2
+magnify = 3
+detail = 2
+shading = 0.35
+colour = 0.24 0.27 0.13
+
+[greyrock]
+asset = dark_rock_02
+metres = 2
+magnify = 3
+detail = 1
+shading = 0.5
+colour = 0.33 0.36 0.33
+
+[purplerock]
+asset = rock_face_04
+metres = 2
+magnify = 3
+detail = 1
+shading = 0.5
+colour = 0.25 0.24 0.27
+
+[slate]
+asset = rock_face
+metres = 2.4
+magnify = 3
+detail = 1
+shading = 0.5
+colour = 0.30 0.31 0.31
+
+[dirt]
+asset = dirt
+metres = 2
+magnify = 3
+detail = 1.2
+shading = 0.3
+colour = 0.42 0.27 0.18
+
+[mud]
+asset = brown_mud_leaves_01
+metres = 1.3
+magnify = 3
+detail = 1.2
+shading = 0.3
+colour = 0.22 0.20 0.10
+
+[flagstone]
+asset = rock_boulder_dry
+metres = 1.8
+magnify = 3
+detail = 1
+shading = 0.6
+colour = 0.35 0.34 0.32
+
+; Bark for generated trees (a zone file's "tree" lines): one repeat of the photo covers metres x magnify of the trunk.
+
+[pinebark]
+asset = pine_bark
+metres = 2
+magnify = 1.5
+
+[bark]
+asset = bark_brown_02
+metres = 1
+magnify = 1.5
