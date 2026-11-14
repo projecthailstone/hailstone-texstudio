@@ -1,0 +1,41 @@
+# Rathe Mountains (rathemtn)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree rpine1 = pine pinebark
+tree rpine2 = pine pinebark
+tree rgpine = pine pinebark
+tree bpine1 = pine pinebark
+tree rcedar1 = pine pinebark
+tree rcedar2 = pine pinebark     # same cedar leaves as rcedar1
+
+rgrass = grass
+
+rrock = purplerock
+rgr1 = grass purplerock
+rgr2 = grass purplerock
+rgr3 = grass purplerock
+rgr4 = grass purplerock
+rgr5 = grass purplerock
+rgr6 = grass purplerock
+rgr7 = grass purplerock
+rgr8 = grass purplerock
+rgr9 = grass purplerock
+rgr10 = grass purplerock
+rgr11 = grass purplerock
+rgr12 = grass purplerock
+rgr13 = grass purplerock
+rgr14 = grass purplerock
+
+# forest floor: ivy and roots over the ground, with grass and rock
+fgrass = moss
+fgrg = grass moss
+fgr1 = moss purplerock
+fgrgr1 = grass purplerock
+fgrgr2 = grass purplerock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.23 0.27 0.17
+colour moss = 0.21 0.27 0.17
+colour purplerock = 0.16 0.15 0.14

@@ -1,0 +1,16 @@
+# Castle Mistmoore. The castle, tombs and marble are left; the grass and the lichen cliffs are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree bpine = pine pinebark      # the yellow pine
+tree bpine1 = pine pinebark
+
+grass = grass
+greengrass = grass
+browntogreengrass = grass
+grass&dirt = grass dirt
+
+rockwall = mossyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour mossyrock = 0.20 0.20 0.14

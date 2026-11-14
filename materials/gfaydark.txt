@@ -1,0 +1,36 @@
+# Greater Faydark (gfaydark): forest floor of grass, dirt trails and a few rock faces.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree nekpine1 = pine pinebark   # the huge Faydark pines
+tree nekpine2 = pine pinebark
+
+sgrass = grass
+grastran = grass
+xgrass1 = grass
+1dirtfloor = dirt
+
+grassrock = grass greyrock
+
+rockw2 = slate
+sfrg4 = grass slate
+sfrg5 = grass slate
+sfrg6 = grass slate
+sfrg7 = grass slate
+sfrg8 = grass slate
+sfrg9 = grass slate
+sfrg10 = grass slate
+
+spath = grass dirt sharp
+spath45 = grass dirt sharp
+spathend = grass dirt sharp
+spathlh = grass dirt sharp
+spathrh = grass dirt sharp
+spatht = grass dirt sharp
+spathtol = grass dirt sharp
+spathtor = grass dirt sharp
+spathy1 = grass dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.26 0.22 0.13
+colour grass = 0.22 0.27 0.16
+colour slate = 0.28 0.24 0.22

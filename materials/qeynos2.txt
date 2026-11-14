@@ -1,0 +1,15 @@
+# North Qeynos (qeynos2): outdoor ground only. Buildings, the sewers (the 10* family) and water are left as they are.
+
+tree tree1 = pine pinebark
+tree tree6 = willow bark
+
+xgrass1 = grass
+grass1 = grass
+xgrasdir = grass dirt
+xdrtpat3 = grass flagstone sharp   # stepping-stone path in the grass
+
+coble3 = cobble sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour cobble = 0.33 0.31 0.24
+colour grass = 0.25 0.33 0.15

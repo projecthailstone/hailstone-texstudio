@@ -1,0 +1,8 @@
+# Erudin (erudnext), outdoor: ground only. The marble city, roofs, the sea floor (dirt3und) and water are left
+# as they are. No trees here (only small plants).
+
+rock = greyrock
+grass1 = grass
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.24 0.34 0.16

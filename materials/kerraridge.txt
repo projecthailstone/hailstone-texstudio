@@ -1,0 +1,19 @@
+# Kerra Ridge. Huts, temple and wood are left; sand, grass, mud and the sandstone cliffs are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+tree islandpalm = palm palmbark
+tree islandpalm1 = palm palmbark
+# lava2 (dark rough rock by the lava) left for now: not sure what it is.
+
+kerrasand02 = sand
+sandstone2 = greyrock
+xgrasdir = grass dirt
+grassrock = grass greyrock
+mudmuck = mud
+topground2 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.22 0.18 0.10
+colour greyrock = 0.71 0.68 0.62
+colour mud = 0.17 0.15 0.10
+colour sand = 0.58 0.54 0.38

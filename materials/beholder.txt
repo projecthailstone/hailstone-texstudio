@@ -1,0 +1,31 @@
+# Gorge of King Xorbb (beholder)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+bhdrock2 = greyrock
+bhnwesttr = greyrock
+rock = greyrock
+rock02 = greyrock
+
+bhfloor = dirt
+bhfldirt = dirt
+dirt = dirt
+1dirt = dirt
+bhnwtrfl = dirt
+bhnwtrfl02 = dirt
+
+# dirt ledges over the rock walls
+bhrokdirt = dirt greyrock
+bhwall1 = dirt greyrock
+bhwall2 = dirt greyrock
+bhwall256 = dirt greyrock
+bhwall3 = dirt greyrock
+bhwall4 = dirt greyrock
+
+# the mine's dark rock (bluemin1 carries a carved circle and stays as it is)
+bluemin = purplerock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.25 0.19 0.13
+colour purplerock = 0.21 0.20 0.22

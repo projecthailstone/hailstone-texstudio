@@ -1,0 +1,28 @@
+# Lake Rathetear (lakerathe)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree rgpine = pine pinebark
+tree bpine1 = pine pinebark
+tree rcedar1 = pine pinebark
+
+rgrass2 = grass
+pgrasstrans = grass dirt
+
+rrock = purplerock
+rrock02 = grass purplerock
+rrock03 = grass purplerock
+rrock06 = grass purplerock
+rgr1 = grass purplerock
+rgr2 = grass purplerock
+rgr3 = grass purplerock
+rgr4 = grass purplerock
+rgr5 = grass purplerock
+rgr6 = grass purplerock
+rgr7 = grass purplerock
+rgr8 = grass purplerock
+rgr10 = grass purplerock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour purplerock = 0.16 0.15 0.14

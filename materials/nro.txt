@@ -1,0 +1,50 @@
+# North Ro (nro): desert, the river's grassy banks and the canyon walls.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree gpine = pine pinebark
+tree bpine1 = pine pinebark     # the tall yellow pine
+tree tree72 = willow bark       # hanging strands
+tree islandpalm = palm palmbark
+tree islandpalm1 = palm palmbark
+
+sand = sand
+sandtrans = sand greyrock
+cs1 = sand greyrock
+seafloor = sand
+sfs1 = sand
+
+canwall1 = greyrock
+cd1 = grass greyrock            # dry grass (dirt01) into the canyon rock
+cpg1 = grass greyrock
+cpg4 = grass greyrock
+cpg5 = grass greyrock
+cpg6 = grass greyrock
+cpg7 = grass greyrock
+cpg8 = grass greyrock
+cpg9 = grass greyrock
+cpg10 = grass greyrock
+cpgd1 = grass greyrock
+mpg451 = grass greyrock
+
+pgrass = grass
+dirt01 = grass                  # despite its name, a dry grass stubble
+pgd1 = grass
+pgdend = grass
+
+cpath = grass dirt sharp
+cpath45 = grass dirt sharp
+cpathtol = grass dirt sharp
+cpathtor = grass dirt sharp
+cpathy1 = grass dirt sharp
+
+spg1 = sand grass
+spg4 = sand grass
+spg5 = sand grass
+spg6 = sand grass
+spg7 = sand grass
+spg8 = sand grass
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.33 0.34 0.19
+colour greyrock = 0.42 0.32 0.17
+colour sand = 0.56 0.48 0.29

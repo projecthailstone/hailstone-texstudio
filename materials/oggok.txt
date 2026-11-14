@@ -1,0 +1,13 @@
+# Oggok: outdoor ground only. Buildings, stairs, snake pillars, sludge and water are left as they are.
+
+tree cedar1 = pine pinebark
+tree bpine = pine pinebark
+
+transwalls = greyrock
+ogcaveint = greyrock
+ogcavefloor1 = dirt
+oggokeg = grass dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.15 0.10 0.07
+colour greyrock = 0.25 0.21 0.16

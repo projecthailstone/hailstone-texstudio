@@ -1,0 +1,2 @@
+# Plane of Hate (hateplane): all of it is architecture (tiled walls, carved blocks, roofs, the ceiling) or lava,
+# so no texture is converted.

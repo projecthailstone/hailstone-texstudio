@@ -1,0 +1,17 @@
+# Ak'Anon. City: only the natural cavern rock and the patchy grass are converted; metal, marble and water are left.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree tree21 = pine pinebark
+tree tree70 = willow bark
+tree tree71 = willow bark
+
+# layered brown rock: walls, floor and ceiling share one picture
+rockw2 = slate
+rockf1 = slate
+rockc1 = slate
+
+mush = grass dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour slate = 0.25 0.21 0.20

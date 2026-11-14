@@ -56,14 +56,20 @@ to make it the pack Hailstone uses.
 
 With **Photo ground materials** on, the ground of the zones the studio has rules for is rebuilt from free photo
 textures instead of upscaled. Grass, rock, dirt, mud and flagstone paths keep the original's layout and colour, so
-the rebuilt tiles still meet the tiles round them, and gain the photos' detail, with normal and roughness maps. Only
-**Qeynos Hills** has rules so far.
+the rebuilt tiles still meet the tiles round them, and gain the photos' detail, with normal and roughness maps. In
+cities only the ground is rebuilt (streets, grass, dirt, rock), not walls or roofs. The studio has rules for
+the outdoor zones of the original game (no expansions, and not the ones revamped later): West, North, South and
+East Karana, Qeynos Hills, Lake Rathetear, the Rathe Mountains, the Gorge of King Xorbb, Kithicor Forest, Everfrost,
+North Ro, Erud's Crossing, Greater and Lesser Faydark, Butcherblock, Steamfont, Dagnor's Cauldron; the outdoor cities
+(North and South Qeynos, Surefall Glade, Halas, Rivervale, Grobb, Oggok, Erudin, Felwithe, Ak'Anon); Crushbone,
+Castle Mistmoore, Kerra Isle and the Estate of Unrest; and the Planes of Sky, Fear and Hate (the Plane of Hate's ground is all stonework, so only its trees would change: it has none).
 
 The textures come from [Poly Haven](https://polyhaven.com) (CC0). The first build with this option downloads about
-25 MB of them into the studio's cache, and later builds use the cache. A rebuilt tile is 512 times the pack's size on
+60 MB of them into the studio's cache, and later builds use the cache. A rebuilt tile is 512 times the pack's size on
 a side (1024 for a Standard pack). The rules are text files in the studio's `materials/` folder: `materials.txt` names
 the materials and their Poly Haven textures, and a file per zone (`qeytoqrg.txt`) says which of the zone's textures
-are made of which. The client's `docs/graphics.md` "Photo materials" says how a tile is made. Changing the rules makes
+are made of which, and may set a material's colour in that zone's art (`colour grass = 0.30 0.27 0.12`). The
+client's `docs/graphics.md` "Photo materials" says how a tile is made. Changing the rules makes
 the affected tiles again on the next build, and turning the option off gives them back to the upscaler.
 
 ### Generated trees
@@ -72,9 +78,9 @@ With **Generated trees** on, the trees of the zones the studio has tree rules fo
 place of the old ones, a trunk under a few crossed flat cards. Each new tree stands on the old trunk at about its
 width, so the collision (which keeps the old trunk) matches what you see, and fills the shape the old leaves showed,
 in their colours. Pines grow whorls of needle sprays, broadleaf trees grow branches into the crown, willows hang
-strands. The bark is a Poly Haven photo texture (CC0), fetched with the photo materials. The trees go into the pack's
-`models/` folder; Hailstone draws them with the pack. Only **Qeynos Hills** has tree rules so far: lines such as
-`tree tree71 = willow bark` in its zone file (the client's `docs/graphics.md` "Generated trees"). The trees are grown
+strands, dead trees grow bare forked limbs and palms a crown of fronds. The bark is a Poly Haven photo texture (CC0), fetched with the photo materials. The trees go into the pack's
+`models/` folder; Hailstone draws them with the pack. The zones with ground rules have tree rules too (30 of them have
+trees to replace): lines such as `tree tree71 = willow bark` in their zone files (the client's `docs/graphics.md` "Generated trees"). The trees are grown
 again on every build, which takes a few seconds a zone.
 
 ### Speed and size (RX 9060 XT)

@@ -1,0 +1,16 @@
+# South Qeynos (qeynos): outdoor ground only. Streets, dirt and grass; buildings, docks, the harbour floor
+# (wafl1, wawall1) and the sewers below (the 10* family) are left as they are.
+
+coble1 = cobble sharp
+coble3 = cobble sharp
+coble2 = dirt cobble sharp      # dirt with scattered stones
+
+dirt3 = dirt
+dirt = dirt
+
+grass1 = grass
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour cobble = 0.31 0.29 0.28
+colour dirt = 0.30 0.21 0.15
+colour grass = 0.24 0.34 0.16

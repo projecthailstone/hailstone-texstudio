@@ -1,0 +1,24 @@
+# Plane of Fear (fearplane): grass with dark rock outcrops; Cazic-Thule's carved stone and the walls are left alone.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree fetree1 = broadleaf bark
+tree fetree2 = broadleaf bark
+tree fetree3 = broadleaf bark
+tree dedpine1 = dead pinebark
+
+fgrass = grass
+fgr1 = grass purplerock
+fgr2 = grass purplerock
+fgr3 = grass purplerock
+fgr4 = grass purplerock
+fgr5 = grass purplerock
+fgr6 = grass purplerock
+fgr7 = grass purplerock
+fgr8 = grass purplerock
+fgr9 = grass purplerock
+fgr10 = grass purplerock
+
+bhdrock = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.22 0.28 0.17

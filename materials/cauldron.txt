@@ -1,0 +1,37 @@
+# Dagnor's Cauldron (cauldron): blue craggy rock round the lake, pale rock outcrops, grass.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree tree10 = pine pinebark
+tree dedpine = dead pinebark
+tree dedpine1 = dead pinebark
+
+caulstone = purplerock
+crjr1 = purplerock greyrock
+crjr2 = purplerock greyrock
+
+cdirt = slate                   # despite its name, a pale weathered rock
+cscd1 = purplerock slate
+cscd2 = purplerock slate
+cscd3 = purplerock slate
+cscd4 = purplerock slate
+cscd5 = purplerock slate
+cscd6 = purplerock slate
+
+cgras = grass
+csg1 = purplerock grass
+csg2 = purplerock grass
+csg3 = purplerock grass
+csg4 = purplerock grass
+csg5 = purplerock grass
+csg6 = purplerock grass
+csg7 = purplerock grass
+csg8 = purplerock grass
+dircstran = purplerock grass
+xgrasdir = grass dirt
+
+rockw2 = slate
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.16 0.28 0.19
+colour purplerock = 0.19 0.21 0.31
+colour slate = 0.36 0.31 0.30

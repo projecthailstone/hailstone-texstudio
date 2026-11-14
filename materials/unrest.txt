@@ -1,0 +1,13 @@
+# Estate of Unrest. The manor, walls, hedges, sidewalks and floors are left; only the lawn and bare earth are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree gpine = pine pinebark
+tree cedar1 = pine pinebark
+tree cedar2 = pine pinebark
+
+xgrasdir = grass
+topground2 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.22 0.18 0.10

@@ -1,0 +1,29 @@
+# Surefall Glade (qrg): outdoor ground only. The druid tree's bark walls (drtree), lodges, docks and water are
+# left as they are.
+
+tree tree1 = pine pinebark
+tree tree10 = pine pinebark
+tree tree16 = pine pinebark
+tree tree17 = pine pinebark
+tree tree18 = pine pinebark
+tree tree20 = pine pinebark
+tree tree21 = pine pinebark
+tree tree22 = pine pinebark
+tree bpine1 = pine pinebark     # the tall yellow pine
+tree treetry = broadleaf bark
+tree tree71 = willow bark
+
+xgrass1 = grass
+grass1 = grass
+xgrasdir = grass dirt
+grasdrt1 = grass dirt
+drt1 = dirt
+dirt = dirt
+
+grassrock = grass greyrock
+rock1 = purplerock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.22 0.15 0.11
+colour grass = 0.25 0.33 0.15
+colour purplerock = 0.30 0.29 0.31

@@ -1,0 +1,48 @@
+# South Karana (southkarana)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree treetry = broadleaf bark
+tree tree5 = pine pinebark
+tree tree10 = pine pinebark
+
+pgrass2 = grass
+rgrass2 = grass
+
+drymud1 = dirt
+drymud2 = grass dirt
+drymud3 = grass dirt
+drymud4 = grass dirt
+drymud5 = grass dirt
+drymud7 = grass dirt
+drymud8 = grass dirt
+drymud9 = grass dirt
+drymud10 = grass dirt
+drymud11 = grass dirt
+grydirt2 = dirt
+cliffedge = grass dirt
+paw02 = grass dirt
+pawhole = grass dirt
+lrskgrs = grass dirt
+pgrasstrans = grass dirt
+
+drock = greyrock
+drockgrass = grass greyrock
+drockgrass2 = grass greyrock
+drockgrass4 = grass greyrock
+drockgrass6 = grass greyrock
+drockgrass7 = grass greyrock
+drockgrass8 = grass greyrock
+drockgrass9 = grass greyrock
+drockmud = dirt greyrock
+
+rrock = purplerock
+rrock02 = grass purplerock
+rrock03 = grass purplerock
+rrock04 = grass purplerock
+rrock06 = grass purplerock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.30 0.23 0.17
+colour purplerock = 0.16 0.15 0.14

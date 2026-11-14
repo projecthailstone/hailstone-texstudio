@@ -1,0 +1,17 @@
+# Halas: outdoor ground only. The stone-block walls (coldmnt2, coldmnt2os, coldmnt3, osnowwall, vistavernowal,
+# tudr001), buildings and water are left as they are.
+
+tree halpine = pine pinebark
+
+snowb = snow
+bloodsnow = snow
+snowrock = snow greyrock sharp
+halasnowrf = snow greyrock sharp   # snow with rocks, despite the name a ground tile
+
+coldmnt1 = greyrock
+coldmnt4 = greyrock
+coldmnt5 = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour greyrock = 0.50 0.52 0.50
+colour snow = 0.71 0.73 0.80

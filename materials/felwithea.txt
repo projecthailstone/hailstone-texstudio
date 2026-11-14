@@ -1,0 +1,29 @@
+# Northern Felwithe. City: only the natural ground, the mossy earth banks and the cobble streets are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree tree1 = pine pinebark
+tree tree10 = pine pinebark
+tree tree16 = pine pinebark
+tree tree17 = pine pinebark
+tree tree18 = pine pinebark
+tree tree21 = pine pinebark
+tree gpine = pine pinebark
+tree holepine = pine pinebark
+tree cedar1 = pine pinebark
+tree cedar2 = pine pinebark
+tree bpine = pine pinebark      # the yellow pine
+
+xgrass1 = grass
+topground2 = dirt
+
+# earth with ivy clumps: the banks and hills around the city
+fewall01 = moss dirt
+fewall03 = moss dirt
+
+coble4 = cobble
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour cobble = 0.35 0.31 0.24
+colour dirt = 0.22 0.18 0.10
+colour grass = 0.27 0.30 0.18
