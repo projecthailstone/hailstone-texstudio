@@ -1,0 +1,30 @@
+# Crushbone. Orc keep walls, planks and skins are left; the hills, cliffs and cave rock are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree holepine = pine pinebark
+tree cedar1 = pine pinebark
+tree cedar3 = pine pinebark
+tree cedar4 = pine pinebark
+
+clovegrass = grass
+transdkgrass = grass dirt
+
+mountcrush = greyrock
+darkmtcrush = greyrock
+grassrock = mossyrock
+
+dirtplain = dirt
+1dirtfloor = dirt
+finedrt = dirt
+
+# rough cave rock with embedded slabs
+orecastwl = greyrock
+orec3stwl = greyrock
+orecavewl = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.25 0.20 0.14
+colour grass = 0.25 0.31 0.18
+colour greyrock = 0.18 0.20 0.17
+colour mossyrock = 0.19 0.20 0.15

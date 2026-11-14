@@ -55,3 +55,7 @@ xp45ltodown = grass flagstone sharp
 xp45ltoup = grass flagstone sharp
 xp45rtodown = grass flagstone sharp
 xp45rtoup = grass flagstone sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.38 0.26 0.21
+colour slate = 0.25 0.26 0.25

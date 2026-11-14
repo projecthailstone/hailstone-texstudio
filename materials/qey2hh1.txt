@@ -1,0 +1,67 @@
+# West Karana (qey2hh1)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree treetry = broadleaf bark
+tree tree71 = willow bark
+tree tree72 = willow bark       # same hanging-strand leaves as tree71
+tree tree5 = pine pinebark
+tree bpine1 = pine pinebark
+tree rpine1 = pine pinebark
+tree rpine2 = pine pinebark
+
+pgrass = grass
+
+pgrassdirt = grass dirt
+pgrassdirt2 = grass dirt
+dirtygrass = grass dirt
+drymud1 = dirt
+drymud2 = grass dirt
+drymud3 = grass dirt
+drymud4 = grass dirt
+drymud5 = grass dirt
+drymud6 = grass dirt
+drymud7 = grass dirt
+drymud8 = grass dirt
+drymud9 = grass dirt
+
+# ploughed fields: rows of soil with green stripes
+hayplow1 = dirt grass sharp
+hayplow2 = dirt grass sharp
+hayplow3 = dirt grass sharp
+
+hhdrock = greyrock
+hhdrockgrass = grass greyrock
+hhdrockgrass1 = grass greyrock
+hhdrockgrass2 = grass greyrock
+hhdrockgrass3 = grass greyrock
+hhdrockgrass4 = grass greyrock
+hhdrockgrass5 = grass greyrock
+hhdrockgrass6 = grass greyrock
+hhdrockgrass7 = grass greyrock
+hhdrockgrass8 = grass greyrock
+rockisle1 = grass greyrock
+hhpblsgrs2 = grass greyrock sharp
+hhpeblsgrs1 = grass greyrock sharp
+rockindrt = dirt greyrock
+
+# dirt tracks
+ppath-t = grass dirt sharp
+ppathtol = grass dirt sharp
+ppathtolfade = grass dirt sharp
+ppathtor = grass dirt sharp
+ppathy45 = grass dirt sharp
+pq2hhpath = grass dirt sharp
+q2hhpath = grass dirt sharp
+q2hhpathfade = grass dirt sharp
+
+# flagstone paths
+xdrapath = grass flagstone sharp
+xdrpath = grass flagstone sharp
+xdrpath2 = grass flagstone sharp
+xdrpath3 = grass flagstone sharp
+xdrpath4 = grass flagstone sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.25 0.17 0.09

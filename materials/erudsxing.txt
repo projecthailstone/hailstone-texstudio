@@ -1,0 +1,37 @@
+# Erud's Crossing (erudsxing): open sea, the island's sand, grass and rock.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree islandpalm = palm palmbark
+tree islandpalm1 = palm palmbark
+
+seafloor = sand
+sand3 = sand
+sfs1 = sand
+sfs2 = sand
+sfs3 = sand
+sfs4 = sand
+sfs5 = sand
+sfs6 = sand
+sfs7 = sand
+
+islegrass = grass
+sg1 = sand grass
+sg1a = sand grass
+sg2 = sand grass
+sg3 = sand grass
+sg4 = sand grass
+sg5 = sand grass
+sg6 = sand grass
+sg7 = sand grass
+sg8 = sand grass
+
+islandrock = greyrock
+gr1 = grass greyrock
+gr2 = grass greyrock
+gr3 = grass greyrock
+gr4 = grass greyrock
+gr5 = grass greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.18 0.26 0.11
+colour sand = 0.40 0.45 0.27

@@ -1,0 +1,17 @@
+# Grobb: outdoor ground only. Wooden walls and walks, the blood and coal pits (b1, gc1, nocoals), the pale
+# stone (whatever, wall1) and water are left as they are.
+
+tree swtree1 = auto bark
+tree swtree2 = willow bark
+tree swtree3 = willow bark
+
+grcagr = mud
+grinnerca = mud
+grobbgrass = grass mud
+
+oggmount2 = greyrock
+oggmount = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour greyrock = 0.27 0.22 0.18
+colour mud = 0.19 0.16 0.10

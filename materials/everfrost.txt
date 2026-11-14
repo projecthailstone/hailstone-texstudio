@@ -1,0 +1,54 @@
+# Everfrost Peaks (everfrost)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree halpine = pine pinebark
+tree dedpine1 = dead pinebark
+
+efsnow = snow
+tundra = moss
+st1 = snow moss
+st2 = snow moss
+st3 = snow moss
+st4 = snow moss
+st5 = snow moss
+st6 = snow moss
+st7 = snow moss
+st8 = snow moss
+st9 = snow moss
+st10 = snow moss
+st11 = snow moss
+st12 = snow moss
+st13 = snow moss
+st14 = snow moss
+st15 = snow moss
+st16 = snow moss
+eres1 = snow moss
+eres7 = snow moss
+eres8 = snow moss
+
+justdirt = dirt
+darkdirt = dirt
+cavefloor = dirt
+efscf = snow dirt
+
+efrock = greyrock
+efrbbt = dirt greyrock
+efrdd = dirt greyrock
+
+coldmnt1 = slate
+efcm = snow slate
+efstone = slate
+efstones = snow slate
+
+# the streaked earthen slope around Blackburrow's entrance
+btow1 = slate
+bbtrans1 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.29 0.21 0.16
+colour greyrock = 0.20 0.24 0.20
+colour moss = 0.25 0.27 0.21
+colour slate = 0.20 0.16 0.14
+colour snow = 0.67 0.80 0.85

@@ -1,0 +1,37 @@
+# Steamfont Mountains (steamfont): grass, layered rock and dirt trails.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree nekpine1 = pine pinebark
+tree nekpine2 = pine pinebark
+tree bpine1 = pine pinebark     # the tall yellow pine
+
+sgrass = grass
+rockf1 = dirt                   # dark rough floor: soil or rubble, unsure
+
+rockw2 = slate
+sfrg1 = grass slate
+sfrg2 = grass slate
+sfrg3 = grass slate
+sfrg4 = grass slate
+sfrg5 = grass slate
+sfrg6 = grass slate
+sfrg7 = grass slate
+sfrg8 = grass slate
+sfrg9 = grass slate
+sfrg10 = grass slate
+sfrg12 = grass slate
+sfrg14 = grass slate
+
+spath = grass dirt sharp
+spath45 = grass dirt sharp
+spathend = grass dirt sharp
+spathlh = grass dirt sharp
+spathrh = grass dirt sharp
+spatht = grass dirt sharp
+spathtol = grass dirt sharp
+spathtor = grass dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.14 0.11 0.10
+colour grass = 0.22 0.27 0.16
+colour slate = 0.28 0.24 0.22

@@ -1,0 +1,30 @@
+# Lesser Faydark (lfaydark): forest floor of grass and dirt trails, rock outcrops.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree rpine1 = pine pinebark
+tree rpine2 = pine pinebark
+tree cedar1 = pine pinebark
+tree tree72 = willow bark       # hanging strands
+
+sgrass = grass
+mmgrass = grass
+mmgtran = grass
+
+mmwall = greyrock
+mmwgr1 = grass greyrock
+
+rockw2 = slate
+
+spath = grass dirt sharp
+spath45 = grass dirt sharp
+spathend = grass dirt sharp
+spathlh = grass dirt sharp
+spathrh = grass dirt sharp
+spatht = grass dirt sharp
+spathtol = grass dirt sharp
+spathtor = grass dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.22 0.27 0.16
+colour greyrock = 0.20 0.20 0.14
+colour slate = 0.28 0.24 0.22

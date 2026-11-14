@@ -1,0 +1,25 @@
+# Rivervale: outdoor ground only. Burrows (burrowdirt, burrowdirtfloor), buildings, water and the placeholder
+# palette tile are left as they are.
+
+tree tree1 = pine pinebark
+tree tree5 = pine pinebark
+tree tree7 = pine pinebark
+tree tree10 = pine pinebark
+tree tree16 = pine pinebark
+tree tree17 = pine pinebark
+tree tree18 = pine pinebark
+tree tree20 = pine pinebark
+tree tree21 = pine pinebark
+tree tree22 = pine pinebark
+
+xgrasdir = grass dirt
+rkgrass = grass greyrock
+rock = greyrock
+topground2 = dirt
+
+coble3 = cobble sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour cobble = 0.24 0.23 0.23
+colour dirt = 0.22 0.18 0.10
+colour greyrock = 0.29 0.31 0.27

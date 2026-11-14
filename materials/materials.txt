@@ -64,6 +64,74 @@ detail = 1
 shading = 0.6
 colour = 0.35 0.34 0.32
 
+[snow]
+asset = snow_02
+metres = 2
+magnify = 3
+detail = 1
+shading = 0.35
+colour = 0.80 0.84 0.88
+
+[sand]
+asset = sand_01
+metres = 2
+magnify = 3
+detail = 1
+shading = 0.3
+colour = 0.62 0.52 0.36
+
+; Moss and low plants over soil: tundra, forest floor
+[moss]
+asset = forrest_ground_01
+metres = 2
+magnify = 3
+detail = 1.5
+shading = 0.35
+colour = 0.25 0.26 0.16
+
+[mossyrock]
+asset = mossy_rock
+metres = 2
+magnify = 3
+detail = 1
+shading = 0.5
+colour = 0.30 0.33 0.25
+
+; Rounded paving stones: a town's streets
+[cobble]
+asset = cobblestone_floor_04
+metres = 2
+magnify = 2
+detail = 1
+shading = 0.5
+colour = 0.38 0.37 0.35
+
+[gravel]
+asset = gravel_floor
+metres = 1.5
+magnify = 3
+detail = 1
+shading = 0.3
+colour = 0.45 0.42 0.36
+
+; Burnt, ashen ground
+[ash]
+asset = burned_ground_01
+metres = 2
+magnify = 3
+detail = 1
+shading = 0.3
+colour = 0.20 0.18 0.17
+
+; Dry, cracked earth
+[cracked]
+asset = dry_ground_01
+metres = 3
+magnify = 3
+detail = 1
+shading = 0.3
+colour = 0.55 0.50 0.42
+
 ; Bark for generated trees (a zone file's "tree" lines): one repeat of the photo covers metres x magnify of the trunk.
 
 [pinebark]
@@ -74,4 +142,9 @@ magnify = 1.5
 [bark]
 asset = bark_brown_02
 metres = 1
+magnify = 1.5
+
+[palmbark]
+asset = palm_tree_bark
+metres = 1.5
 magnify = 1.5

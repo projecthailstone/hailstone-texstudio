@@ -1,0 +1,57 @@
+# Kithicor Forest (kithicor)
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+
+tree gpine = pine pinebark
+tree bpine1 = pine pinebark
+tree tree71 = willow bark
+
+kwgras1 = grass
+
+kgedtran = grass dirt
+xgrasdir = grass dirt
+ekenddirt = dirt
+
+hhdrock = greyrock
+kghr1 = grass greyrock
+kghr2 = grass greyrock
+kghr4 = grass greyrock
+kghr5 = grass greyrock
+kghr6 = grass greyrock
+kghr7 = grass greyrock
+kghr8 = grass greyrock
+kghr10 = grass greyrock
+rkgrass = mossyrock
+
+# big rounded paving stones
+kstone = flagstone
+kstoneisle = flagstone
+kgks1 = grass flagstone
+kgks2 = grass flagstone
+kgks3 = grass flagstone
+kgks4 = grass flagstone
+kgks5 = grass flagstone
+kgks6 = grass flagstone
+kgks9 = grass flagstone
+kgks10 = grass flagstone
+ksxg = flagstone dirt
+ksrk = flagstone greyrock
+
+# dirt tracks
+kpath = grass dirt sharp
+kpath45 = grass dirt sharp
+kpathlh = grass dirt sharp
+kpathrh = grass dirt sharp
+kpatht = grass dirt sharp
+kpathtol = grass dirt sharp
+kpathtor = grass dirt sharp
+kpathy1 = grass dirt sharp
+kpathy2 = grass dirt sharp
+kpend = grass dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.35 0.27 0.19
+colour flagstone = 0.35 0.40 0.32
+colour grass = 0.18 0.26 0.11
+colour mossyrock = 0.26 0.30 0.22

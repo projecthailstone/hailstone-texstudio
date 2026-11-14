@@ -1,0 +1,11 @@
+# Plane of Sky (airplane): only the islands' dirt tops and their rock sides; the temples and the sky are left alone.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+# no trees (avioutpost is a hut)
+
+justdirt = dirt
+canwall1 = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.29 0.20 0.16
+colour greyrock = 0.42 0.32 0.17
