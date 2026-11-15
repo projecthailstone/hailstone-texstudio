@@ -1,0 +1,57 @@
+# The Feerrott (feerrott): jungle grass, dark craggy rock, dirt paths and earth floors.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+# Left as they are: Cazic-Thule's carved stones (maywall*, caz*), the ogre houses (ogwall), the paving
+# (portst*, sandstonebrick), the eye, gukf1, water and lava.
+
+# Not grown again: the jungle's giant trees and snags (fetree1-3, fedead), trunks wide, flared and vine-covered. The generator gives such a trunk a plain tube, which showed as a fluted column; the game's own tree stays.
+tree dedpine = dead pinebark
+tree dedpine1 = dead pinebark
+
+fgrass = grass
+kwgras1 = grass
+fgrasstrans = grass
+
+bhdrock = greyrock
+bhdrock2 = greyrock
+thrurock = greyrock
+transwalls = greyrock
+fgr1 = grass greyrock
+fgr2 = grass greyrock
+fgr3 = grass greyrock
+fgr4 = grass greyrock
+fgr5 = grass greyrock
+fgr6 = grass greyrock
+fgr7 = grass greyrock
+fgr8 = grass greyrock
+fgr9 = grass greyrock
+fgr10 = grass greyrock
+fgr11 = grass greyrock
+fgr12 = grass greyrock
+fgr13 = grass greyrock
+fgr14 = grass greyrock
+
+bhfldirt = dirt
+bhfloor = dirt
+ogcavefloor1 = dirt
+1dirt = dirt
+bhdrokdirt = dirt greyrock
+thrurocktrans = dirt greyrock
+ogtofer_wl = dirt greyrock
+
+# dirt tracks
+fpath = grass dirt sharp
+fpath45 = grass dirt sharp
+fpathend = grass dirt sharp
+fpathlh = grass dirt sharp
+fpathrh = grass dirt sharp
+fpatht = grass dirt sharp
+fpathtol = grass dirt sharp
+fpathtor = grass dirt sharp
+fpathy1 = grass dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.22 0.17 0.12
+colour grass = 0.22 0.28 0.17
+colour greyrock = 0.18 0.17 0.15

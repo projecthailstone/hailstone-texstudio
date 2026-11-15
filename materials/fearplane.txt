@@ -1,9 +1,7 @@
 # Plane of Fear (fearplane): grass with dark rock outcrops; Cazic-Thule's carved stone and the walls are left alone.
 # texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
 
-tree fetree1 = broadleaf bark
-tree fetree2 = broadleaf bark
-tree fetree3 = broadleaf bark
+# Not grown again: the jungle's giant trees (fetree1-3, as in the Feerrott), trunks wide, flared and vine-covered; the generator's plain tube showed as a fluted column. The game's own tree stays.
 tree dedpine1 = dead pinebark
 
 fgrass = grass

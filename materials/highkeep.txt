@@ -1,0 +1,20 @@
+# High Keep (highkeep), indoor: the rock and earth of the tunnels and the mountain round the keep. The keep's
+# masonry, plaster, wood, tiles, carpets, the prison walls and floor and the sky are left as they are. No trees here.
+# texture = material [material] [sharp] (see qeytoqrg.txt).
+
+# grey rock: tunnel floors and walls, the mountain faces
+hpkconf1 = greyrock
+rock = greyrock
+hpkcon3 = greyrock
+
+hpkconf2 = dirt
+conwall3 = dirt                 # earthen tunnel wall
+hpkdrt1 = dirt
+hpkdrt2 = dirt
+dirt = dirt
+dirt2 = gravel                  # earth thick with pebbles
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.23 0.20 0.13
+colour gravel = 0.30 0.25 0.20
+colour greyrock = 0.28 0.31 0.28

@@ -1,9 +1,7 @@
 # Grobb: outdoor ground only. Wooden walls and walks, the blood and coal pits (b1, gc1, nocoals), the pale
 # stone (whatever, wall1) and water are left as they are.
 
-tree swtree1 = auto bark
-tree swtree2 = willow bark
-tree swtree3 = willow bark
+# Not grown again: the swamp's giant trees (swtree1-3), measured far wider than their slender, root-wrapped trunks look; the generator's plain tube showed as a fluted column. The game's own tree stays.
 
 grcagr = mud
 grinnerca = mud

@@ -1,0 +1,15 @@
+# South Kaladim (kaladimb): the dwarven city and its mines. Only the cave rock, the bare earth and a grass patch are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# Left: marble (arghona and the other pale walls), brick, plaster, wood, roofs, the mine caps and the gem-studded mine
+# wall (minewalgems), water.
+
+# speckled grey-green granite of the cavern walls
+rockwall = greyrock
+rockfloor = dirt
+topground2 = dirt
+xgrass1 = grass
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.16 0.14 0.10
+colour grass = 0.26 0.33 0.15
+colour greyrock = 0.20 0.20 0.14

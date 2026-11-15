@@ -1,0 +1,57 @@
+# Nektulos Forest (nektulos): dark forest floor, purple-brown rock, pale cracked stone patches and dirt paths.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+# Left as they are: the Neriak gate (nerwall, nerdoor, nerfloor, nercling, nericon), the bridge (brid1) and water.
+
+tree nekpine1 = pine pinebark
+tree nekpine2 = pine pinebark
+tree gpine = pine pinebark
+tree bpine1 = pine pinebark
+tree cedar3 = pine pinebark
+tree cedar4 = pine pinebark
+tree dedpine = dead pinebark
+tree dedpine1 = dead pinebark
+tree tree72 = willow bark       # hanging strands
+
+nwgras1 = grass
+
+nerrock = purplerock
+ngnr1 = grass purplerock
+ngnr2 = grass purplerock
+ngnr4 = grass purplerock
+ngnr5 = grass purplerock
+ngnr6 = grass purplerock
+ngnr7 = grass purplerock
+ngnr8 = grass purplerock
+ngnr9 = grass purplerock
+ngnr10 = grass purplerock
+
+# big pale cracked stones, as Kithicor's
+nstone = flagstone
+ngks1 = grass flagstone
+ngks2 = grass flagstone
+ngks3 = grass flagstone
+ngks4 = grass flagstone
+ngks5 = grass flagstone
+ngks6 = grass flagstone
+ngks7 = grass flagstone
+ngks8 = grass flagstone
+ngks9 = grass flagstone
+ngks10 = grass flagstone
+nstoneisle = grass flagstone sharp
+nstoneisle1 = grass flagstone sharp
+
+# dirt tracks
+npath = grass dirt sharp
+npath45 = grass dirt sharp
+npathlh = grass dirt sharp
+npathrh = grass dirt sharp
+npatht = grass dirt sharp
+npathtol = grass dirt sharp
+npathtor = grass dirt sharp
+npend = grass dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour flagstone = 0.50 0.49 0.46
+colour grass = 0.17 0.23 0.09

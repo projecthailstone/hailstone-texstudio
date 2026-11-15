@@ -1,0 +1,17 @@
+# Innothule Swamp (innothule): swamp grass, a little of Grobb's mud and Oggok's rock at the zone lines.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+# Left as they are: the swamp water, and Guk's entrance walls and floor (gukw*, gukf*).
+
+# Not grown again: the swamp's giant trees (swtree1-3), measured far wider than their root-wrapped trunks look. The generator gives such a trunk a plain tube, which showed as a fluted column; the game's own tree stays.
+tree tree72 = willow bark
+tree cedar3 = pine pinebark
+
+pgrass = grass
+grobbgrass = grass mud
+
+oggmount = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.18 0.26 0.11
+colour greyrock = 0.29 0.23 0.19

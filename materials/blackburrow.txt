@@ -1,0 +1,36 @@
+# Blackburrow (blackburrow): the gnolls' earthen tunnels and the wooded entrance. Earth, mud, moss and grass are
+# converted; the planks, bridges' wood, tree bark, gnoll art, bones, blood and water are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+tree cedar1 = pine pinebark
+tree gpine = pine pinebark
+tree holepine = pine pinebark
+tree treetry = broadleaf bark   # a round leafy crown
+
+4stone = dirt                   # despite its name, the tunnels' packed earth (one image under many names)
+bbnewstone2 = dirt
+3stone = dirt
+3stonecracked = dirt
+4stonecracked = dirt
+bridges = dirt
+btopground2 = dirt
+mud = dirt                      # the same packed earth as 4stone
+darkdirt = dirt
+trans1 = dirt mud               # packed earth with dark wet patches
+trans2 = dirt mud
+trans3 = dirt mud
+trans4 = dirt mud
+mudmuck = mud
+
+lymewall = mossyrock            # moss and lichen over the walls
+topground2 = moss               # forest floor at the entrance
+topground1 = grass
+3bar3 = gravel
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.21 0.18 0.12
+colour grass = 0.19 0.20 0.11
+colour gravel = 0.33 0.23 0.18
+colour moss = 0.22 0.18 0.10
+colour mossyrock = 0.17 0.17 0.04
+colour mud = 0.16 0.14 0.09

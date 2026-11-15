@@ -1,0 +1,11 @@
+# The Arena (arena): the dirt floor and the rock round it. The brick walls (mtinwall), the bloodied rock (claw)
+# and the tiled floor are left as they are. No trees here.
+# texture = material [material] [sharp] (see qeytoqrg.txt).
+
+1dirt = dirt
+rrock = greyrock
+rrock2drt1 = dirt greyrock      # dirt below, rock above
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.17 0.12 0.08
+colour greyrock = 0.16 0.15 0.14

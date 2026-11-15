@@ -1,0 +1,30 @@
+# Solusek's Mines (soldunga): lava caves, the goblin warrens and a gnome stronghold. Only the natural cave rock and
+# earth are converted; the masonry, gnome stonework, wood, goblin paintings, ore veins, lava and lava falls are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+wall1 = slate                   # layered brown cave rock
+wall4 = slate                   # the same layered rock, darker
+wall3 = slate                   # blue rock in flat broken faces
+wall1_transwall4 = slate
+twall1_transwall4v2 = slate
+wall1_wall3trans = slate
+wall1_wall3transflip = slate
+wall1_wgtrans = slate dirt
+wall1_wgtrans2 = slate dirt
+
+wall1ceiling = purplerock
+goblinwall = purplerock         # blue craggy rock of the goblin warrens
+1worked2 = purplerock           # rough hewn mine rock
+
+1floor5 = ash                   # dark volcanic rock floor
+
+wg = dirt                       # earthen walls of the goblin warrens
+wg_ceiling = dirt
+brownfloor = dirt
+goblin_rubble = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour ash = 0.14 0.12 0.14
+colour dirt = 0.15 0.12 0.09
+colour purplerock = 0.16 0.15 0.19
+colour slate = 0.17 0.13 0.14

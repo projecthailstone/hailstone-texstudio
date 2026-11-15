@@ -62,7 +62,13 @@ the outdoor zones of the original game (no expansions, and not the ones revamped
 East Karana, Qeynos Hills, Lake Rathetear, the Rathe Mountains, the Gorge of King Xorbb, Kithicor Forest, Everfrost,
 North Ro, Erud's Crossing, Greater and Lesser Faydark, Butcherblock, Steamfont, Dagnor's Cauldron; the outdoor cities
 (North and South Qeynos, Surefall Glade, Halas, Rivervale, Grobb, Oggok, Erudin, Felwithe, Ak'Anon); Crushbone,
-Castle Mistmoore, Kerra Isle and the Estate of Unrest; and the Planes of Sky, Fear and Hate (the Plane of Hate's ground is all stonework, so only its trees would change: it has none).
+Castle Mistmoore, Kerra Isle and the Estate of Unrest; and the Planes of Sky, Fear and Hate (the Plane of Hate's ground is all stonework, so only its trees would change: it has none). The original versions of
+zones revamped later, where the game folder still has them: West, North and East Freeport, Nektulos Forest,
+Innothule Swamp and the Feerrott, with the Arena and Cazic-Thule. Jaggedpine Forest, Stonebrunt Mountains and the
+Warrens, added before Kunark. And the dungeons and cave cities, where only natural rock and earth change: Neriak,
+Kaladim, Paineel, the Erudin palace, Upper and Lower Guk, Solusek's caves A and B, Permafrost, Najena, Befallen,
+Blackburrow, Runnyeye, the Hole, High Keep, Splitpaw, the Qeynos aqueducts and Kedge Keep (all its ground is
+animated, so it keeps the upscaler).
 
 The textures come from [Poly Haven](https://polyhaven.com) (CC0). The first build with this option downloads about
 60 MB of them into the studio's cache, and later builds use the cache. A rebuilt tile is 512 times the pack's size on
@@ -79,7 +85,7 @@ place of the old ones, a trunk under a few crossed flat cards. Each new tree sta
 width, so the collision (which keeps the old trunk) matches what you see, and fills the shape the old leaves showed,
 in their colours. Pines grow whorls of needle sprays, broadleaf trees grow branches into the crown, willows hang
 strands, dead trees grow bare forked limbs and palms a crown of fronds. The bark is a Poly Haven photo texture (CC0), fetched with the photo materials. The trees go into the pack's
-`models/` folder; Hailstone draws them with the pack. The zones with ground rules have tree rules too (30 of them have
+`models/` folder; Hailstone draws them with the pack. The zones with ground rules have tree rules too (37 of them have
 trees to replace): lines such as `tree tree71 = willow bark` in their zone files (the client's `docs/graphics.md` "Generated trees"). The trees are grown
 again on every build, which takes a few seconds a zone.
 

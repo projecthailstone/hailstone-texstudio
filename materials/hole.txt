@@ -1,0 +1,11 @@
+# The Hole (hole): a sunken city in a great cave. Only the cave rock and earth are converted; the city's block walls,
+# marble, tiles, columns, roofs, glass, wood and water are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+rock = greyrock
+naturalstone = greyrock
+newdirt = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.16 0.13 0.10
+colour greyrock = 0.24 0.26 0.26

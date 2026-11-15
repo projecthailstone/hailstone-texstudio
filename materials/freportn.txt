@@ -1,0 +1,13 @@
+# North Freeport (freportn): outdoor ground only. The city walls and their tops, marble, buildings, docks,
+# the water and the green sea floor (dirt3und) are left as they are. No trees here.
+# texture = material [material] [sharp] (see qeytoqrg.txt).
+
+dirt01 = grass                  # despite its name, a dry grass stubble (as in North Ro)
+grass1 = grass
+grsdirt1 = grass                # dry grass over green grass
+
+dirt04 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.33 0.26 0.14
+colour grass = 0.37 0.39 0.22

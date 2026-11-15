@@ -1,0 +1,2 @@
+# Kedge Keep (kedge): underwater, and every one of its terrain textures is animated (the water's ripple), so no
+# texture is converted. It has no trees.

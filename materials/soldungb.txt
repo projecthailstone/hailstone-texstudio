@@ -1,0 +1,25 @@
+# Nagafen's Lair (soldungb): lava caves and the kobold warrens. Only the natural cave rock and earth are converted;
+# the block walls, crystal, gold, kobold paintings and dressings, guano, lava and lava falls are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+wall1 = purplerock
+wall1ceiling = purplerock
+ceiling1 = purplerock
+redwall1 = purplerock           # red-brown cave rock
+kobwall = purplerock
+wg = purplerock                 # speckled rock of the kobold warrens
+wg_ceiling = purplerock
+wall1_wgtrans = purplerock
+wall1_wgtrans2 = purplerock
+wall1ceiling_wgceli_trans = purplerock
+1worked2 = purplerock
+
+1floor5 = ash                   # dark volcanic rock floor
+1floor6 = ash
+
+brownfloor = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour ash = 0.14 0.12 0.14
+colour dirt = 0.21 0.15 0.11
+colour purplerock = 0.20 0.17 0.19

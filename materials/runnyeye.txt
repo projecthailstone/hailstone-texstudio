@@ -1,0 +1,28 @@
+# Runnyeye (runnyeye): the goblins' slime caves. Cave rock, slime-covered rock, earth and mud are converted; the
+# block and cobbled walls, tiles, marble, wood, gems, geodes, decorations, slime pools and water are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+1stone = greyrock
+2wall = greyrock
+2wallcrackel = greyrock         # the same rock with claw marks
+wallcrumble = greyrock
+floor2 = greyrock               # rock floor with pebbles
+
+slimestone = mossyrock          # green slime over rock
+slwetwalls = mossyrock
+slime2wall = mossyrock
+1stonemoss = mossyrock
+floor5 = mossyrock
+slime2trans = mossyrock greyrock
+
+1dirt = dirt
+dirt = dirt
+1dirtplain = dirt
+1cieling = dirt
+slimefloordrt = dirt moss
+mud = mud
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.21 0.15 0.11
+colour mossyrock = 0.32 0.35 0.13
+colour mud = 0.14 0.12 0.07

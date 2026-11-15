@@ -1,0 +1,23 @@
+# The Jaggedpine Forest (jaggedpine): pale cliffs, dirt trails and grass.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+# Left as they are: the jpinebase2a-d ground maps (one painted picture of grass, cliffs and a trail stretched over
+# a whole area, three materials in one), the temple and Brell's shrine (tempcave01, templemarb01, jpinebrick*,
+# jptile01, jpinepil*) and water.
+
+tree ppine400 = pine pinebark
+tree ppine401 = pine pinebark
+tree ppine402 = pine pinebark
+tree dstree311 = broadleaf bark # one big tree with brown leaves
+
+jpinegrassdet01 = grass
+jpinetraildet01 = dirt
+
+jprock01 = greyrock
+jptunnel01 = greyrock dirt
+jptunnel01p = greyrock dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.43 0.38 0.32
+colour grass = 0.20 0.25 0.12
+colour greyrock = 0.60 0.55 0.54

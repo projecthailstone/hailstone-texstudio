@@ -1,0 +1,18 @@
+# Paineel (paineel): the cliffs, the lawns and the grey sand. Marble, block walls, gold, roofs, the city
+# floors (including naturalstone, a paving stone) and the water are left as they are.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+# Not grown again: the huge leafy trees (paintree, paintree2), whose trunks flare at the foot. The generator gives such a trunk a plain tube, which showed as a fluted column; the game's own tree stays.
+
+rock = greyrock
+hhdrock = greyrock
+zonewal = greyrock
+zonewal2 = greyrock
+
+grass1 = grass
+painsand = sand
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.24 0.34 0.16
+colour greyrock = 0.24 0.26 0.26
+colour sand = 0.31 0.33 0.34

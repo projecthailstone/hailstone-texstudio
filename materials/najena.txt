@@ -1,0 +1,17 @@
+# Najena (najena): the caves round Najena's tower. Only the cave rock and earth are converted; the brick, tiles,
+# banners, blood, gouges and water are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+rock1 = greyrock
+rock1dark = greyrock
+1floor5 = purplerock            # blue rock floor
+wall1 = slate                   # layered brown cave rock
+wall1ceiling = purplerock
+
+drt1 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.22 0.14 0.10
+colour greyrock = 0.25 0.25 0.26
+colour purplerock = 0.10 0.08 0.13
+colour slate = 0.17 0.13 0.15

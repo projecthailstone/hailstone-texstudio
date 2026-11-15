@@ -1,0 +1,104 @@
+# Stonebrunt Mountains (stonebrunt): grey crags, snowfields, grass, jungle floor, sand and brown stream beds.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# sharp: small shapes (a path, pebbles), followed closely.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+# Left as they are: the Kerra fort (kerwood*), the Warrens' entrance (sbwarent01), the speckled volcanic patches
+# (sbvolc01, sbrockvolc01, sbdirtvolc01), the stream corners that hold three grounds (the "a" sbriv tiles,
+# sbrivsand07, sbgrassspec04), coord and water.
+
+tree treepine103 = pine pinebark
+tree ictreepine200 = pine pinebark   # the snowy pine
+# Not grown again: the umbrella trees (wltree203, wltree205), wide flared trunks under layered crowns. The generator gives such a trunk a plain tube, which showed as a fluted column; the game's own tree stays.
+
+sbgrass01 = grass
+sbsnow1 = snow
+sbsand01 = sand
+sbjungfloor = moss              # leafy jungle floor
+tunrock03 = gravel
+
+sbrock05 = greyrock
+sbtrailrock01 = greyrock
+sbtrailrock02 = greyrock
+sbtrailrock03 = greyrock
+sbtrailrock04 = greyrock
+sbtrailrock05 = greyrock
+sbtrailrock06 = greyrock
+sbtrailrock07 = greyrock
+
+sbrockgrass1a = grass greyrock
+sbrockgrass1b = grass greyrock
+sbrockgrass1c = grass greyrock
+sbrockgrass1d = grass greyrock
+sbrockgrass2a = grass greyrock
+sbrockgrass2b = grass greyrock
+sbrockgrass2c = grass greyrock
+sbrockgrass2d = grass greyrock
+sbrockgrass3a = grass greyrock
+sbrockgrass3b = grass greyrock
+sbrockgrass3c = grass greyrock
+sbrockgrass3d = grass greyrock
+sbrockspec01 = grass greyrock
+
+sbrocksnow1a = snow greyrock
+sbrocksnow1b = snow greyrock
+sbrocksnow1c = snow greyrock
+sbrocksnow1d = snow greyrock
+sbrocksnow2a = snow greyrock
+sbrocksnow2b = snow greyrock
+sbrocksnow2c = snow greyrock
+sbrocksnow2d = snow greyrock
+sbrocksnow3a = snow greyrock
+sbrocksnow3b = snow greyrock
+sbrocksnow3c = snow greyrock
+sbrocksnow3d = snow greyrock
+sbtrailsnrck01 = snow greyrock sharp
+sbtrailsnow01 = snow greyrock sharp
+sbrocksand2a = sand greyrock
+
+sbjunggrass1a = grass moss
+sbjunggrass1b = grass moss
+sbjunggrass1c = grass moss
+sbjunggrass1d = grass moss
+sbjunggrass2a = grass moss
+sbjunggrass2b = grass moss
+sbjunggrass2c = grass moss
+sbjunggrass2d = grass moss
+sbjunggrass3a = grass moss
+sbjunggrass3b = grass moss
+sbjunggrass3c = grass moss
+sbjunggrass3d = grass moss
+
+sbjungsand1a = sand moss
+sbjungsand1d = sand moss
+sbjungsand2a = sand moss
+sbjungsand2c = sand moss
+sbjungsand2d = sand moss
+sbjungsand3b = sand moss
+sbjungsand3c = sand moss
+sbgrassspec01 = sand grass
+sbgrassspec02 = sand grass
+sbgrassspec03 = sand grass
+
+# brown stream beds
+sbrivrock02 = greyrock dirt sharp
+sbrivrock03 = greyrock dirt sharp
+sbrivrock04 = greyrock dirt sharp
+sbrivrock05 = greyrock dirt sharp
+sbrivgras02 = grass dirt sharp
+sbrivgras03 = grass dirt sharp
+sbrivgras04 = grass dirt sharp
+sbrivgras05 = grass dirt sharp
+sbrivsnow01 = snow dirt sharp
+sbrivsnow05 = snow dirt sharp
+sbrivsnow06 = snow dirt sharp
+sbrivjung02 = moss dirt sharp
+sbrivjung03 = moss dirt sharp
+sbrivsand02 = sand dirt sharp
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.27 0.29 0.21
+colour gravel = 0.29 0.28 0.26
+colour greyrock = 0.24 0.26 0.26
+colour moss = 0.25 0.25 0.10
+colour sand = 0.66 0.54 0.37
+colour snow = 0.71 0.73 0.80
