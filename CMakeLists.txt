@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.25)
 # add-on of Hailstone (the client's docs/addons.md "Tools"). It builds against a hailstone-client checkout
 # (HAILSTONE_CLIENT_DIR): the archive readers, the texture pack rules (src/texpack), the Lua UI, Vulkan and ImGui
 # layers are the client's; the upscaler (ncnn) and the window are here.
-project(hailstone-texstudio VERSION 1.0.0 LANGUAGES C CXX)
+project(hailstone-texstudio VERSION 1.1.0 LANGUAGES C CXX)
 set(TEXSTUDIO_VERSION_LABEL "beta")
 if(TEXSTUDIO_VERSION_LABEL STREQUAL "")
   set(TEXSTUDIO_VERSION ${PROJECT_VERSION})
