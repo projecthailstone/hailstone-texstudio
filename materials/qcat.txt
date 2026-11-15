@@ -1,0 +1,5 @@
+# Qeynos Catacombs (qcat), indoor: only the mossy earth floor of the thieves' den is converted. The tiled
+# sewer walls and floors, the red rock (redrock1), blood, writing and water are left. No trees here.
+# texture = material [material] [sharp] (see qeytoqrg.txt).
+
+thievflr = dirt moss            # dark earth with patches of moss

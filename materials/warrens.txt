@@ -1,0 +1,34 @@
+# The Warrens (warrens): caves of pitted volcanic rock, grey stone and earth floors. Built walls and floors are left.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# Left as they are: the tiled and block floors and walls (volfloor2*, volfloor902, volblock*, vol2volblock,
+# vblktrim), the brick (rkbrick*, rktrim), the wood trim (blutrm*), 1022, holo, coor and water.
+
+# pitted volcanic cave rock
+volcanic = greyrock
+volc90 = greyrock
+volfloor = greyrock
+volfl270 = greyrock
+
+# smoother grey stone
+rock2 = slate
+rock290 = slate
+rock2180 = slate
+naturalstone = slate
+naturalston180 = slate
+naturalston270 = slate
+rock2volc2180 = greyrock slate
+
+newdirt = dirt
+newdirt90 = dirt
+newdirt180 = dirt
+newdrt270 = dirt
+dirtvolc01 = dirt greyrock
+dirtvolc02 = dirt greyrock
+dirtvolc022 = dirt greyrock
+dirtvolc03 = dirt greyrock
+dirtvolc04 = dirt greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.16 0.12 0.09
+colour greyrock = 0.28 0.28 0.21
+colour slate = 0.24 0.26 0.26

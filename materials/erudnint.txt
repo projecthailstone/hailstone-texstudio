@@ -1,0 +1,10 @@
+# Erudin Palace (erudnint): only the lawn and the rock are converted; the marble halls, the water and the
+# falls are left as they are. No trees here (only potted plants).
+# texture = material [material] [sharp] (see qeytoqrg.txt).
+
+grass1 = grass
+rock = greyrock
+erurock = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour grass = 0.24 0.34 0.16

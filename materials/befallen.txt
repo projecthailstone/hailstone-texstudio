@@ -1,0 +1,5 @@
+# Befallen (befallen): the cave rock round the crypts is converted; the tiled floors, panelled walls, brickwork,
+# stairs and metal trim are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+rock = greyrock

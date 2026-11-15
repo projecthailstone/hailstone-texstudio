@@ -1,0 +1,15 @@
+# East Freeport (freporte): outdoor ground only. The harbour's water and green sea floor (dirt3und), the city
+# walls, buildings and docks are left as they are. No trees here (only cacti and dunes).
+# texture = material [material] [sharp] (see qeytoqrg.txt).
+
+dirt01 = grass                  # despite its name, a dry grass stubble (as in North Ro)
+
+dirtslm2 = dirt
+dirtslm1 = dirt
+dirtslm3 = dirt
+dirt04 = dirt
+dirt03 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.34 0.27 0.15
+colour grass = 0.44 0.41 0.25

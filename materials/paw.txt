@@ -1,0 +1,21 @@
+# Splitpaw (paw): the gnolls' caves. The cave rock, cracked rock floors and moss are converted; the brickwork, round
+# stone floors, straw, carvings, paw prints, skulls, blood and water are left.
+# texture = material [material] [sharp]; tree <object> = <style> [<bark>] (see qeytoqrg.txt).
+
+pawrock3c1 = purplerock
+pawrock3 = purplerock
+pawrock1a = purplerock          # red-brown rock
+pawrock3to1tr1 = purplerock
+pawrock3to1tr2 = purplerock
+
+pawrock3f1 = flagstone          # rock floor broken into plates
+pawc1 = cracked                 # grey rock with wide cracks
+pawroundrock1c = cracked
+
+gukc1 = moss
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour cracked = 0.30 0.25 0.19
+colour flagstone = 0.27 0.23 0.15
+colour moss = 0.21 0.21 0.03
+colour purplerock = 0.31 0.25 0.14

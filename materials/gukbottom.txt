@@ -1,0 +1,40 @@
+# Lower Guk (gukbottom): the ruined froglok city in the caves below. Only the bare brown cave rock, the moss, earth and mud are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# Built work is left: the cut and tiled floor slabs, the round-stone and cobbled floors, the green-trimmed and
+# decorated wall panels (glyphs, skulls, shelves, banners, webs, blood, guano), wood, marble, water and anything animated.
+
+# the rough brown cave rock of the walls and ceilings (one picture, also on some floors)
+gukw5 = purplerock
+gukw4 = purplerock
+gukw4a = purplerock
+gukw5s1 = purplerock
+gukw5a = purplerock
+gukw5blong = purplerock
+gukw6a = purplerock
+gukc5dark = purplerock
+gukc5darkb = purplerock
+gukwgh1 = purplerock
+gukwgh1a = purplerock
+gukwgh1tran1 = purplerock
+gukwgh1tran2 = purplerock
+gukdirt2 = purplerock            # despite its name, the same rock picture
+gukw5rtran1 = purplerock mossyrock
+
+# moss-grown rock and moss mats
+gukstone1 = mossyrock
+gukw1a2 = mossyrock
+gukrw1 = mossyrock
+gukrc1 = mossyrock
+gukc1 = moss
+gukf1a = moss
+gukf1 = moss
+
+gukdirt1 = dirt
+mud = mud
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.22 0.15 0.04
+colour moss = 0.21 0.20 0.04
+colour mossyrock = 0.19 0.21 0.10
+colour mud = 0.14 0.12 0.07
+colour purplerock = 0.13 0.08 0.02

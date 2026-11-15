@@ -1,0 +1,21 @@
+# Cazic-Thule (cazicthule): the temple and its stonework are left; only the courtyard's grass, the earth and the
+# rough rock walls round the courtyard are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# tree <object> = <style> [<bark material>]: the object is grown again as a tree fitted to it.
+# Left as they are: the temple's blocks, reliefs, marble, tiles and stairs (ct*, relief, heads, marbl*, tile,
+# limestone2, sandstonebrick, carnigo), the slime and water, the sky.
+
+tree cedar1 = pine pinebark
+tree cedar2 = pine pinebark
+
+grass = grass
+1dirt = dirt
+dirt1 = dirt
+
+# rough rock, no block seams: the walls round the courtyard (the temple inside has its own ct* walls)
+wall6 = greyrock
+mainwall = greyrock
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.17 0.12 0.08
+colour greyrock = 0.38 0.36 0.26

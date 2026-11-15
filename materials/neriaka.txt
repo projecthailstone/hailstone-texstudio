@@ -1,0 +1,16 @@
+# Neriak Foreign Quarter (neriaka): the dark elf city in a cavern. Only the cavern's own rock (walls, ceiling, floor) is converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# Left: the block, brick and dry-stone walls, the dark cracked wall (nerwall3), plaster, marble, wood, roofs,
+# tiles, blood-stained floors, water and the falls.
+
+# purple-grey cavern rock
+wall1 = purplerock
+wall1ceiling = purplerock
+neriakfloor = purplerock
+goblin_floor = purplerock
+
+16flor = dirt                   # an earth floor indoors
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.24 0.16 0.09
+colour purplerock = 0.19 0.16 0.17

@@ -1,0 +1,12 @@
+# North Kaladim (kaladima): the dwarven city in the mountain. Only the cave rock and the bare earth are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# Left: brick, plaster, marble, tiled and wooden floors, roofs, the arena, water, and the earth strewn with bones (dirtbones).
+
+# speckled grey-green granite of the cavern walls
+rockwall = greyrock
+rockfloor = dirt
+topground2 = dirt
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour dirt = 0.15 0.14 0.10
+colour greyrock = 0.20 0.20 0.14

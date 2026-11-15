@@ -1,0 +1,13 @@
+# Permafrost Keep (permafrost): ice caves with a giants' keep. The dark cave rock, the snow and the cold rock are converted.
+# texture = material [material] [sharp]. Two materials: the original blends the first into the second.
+# Left: the frosted, ice-glazed rock (permrock3) and the ice floor (cavefl), since there is no ice material, with their
+# blends into the dark rock; the snow-and-icicle rock (permrock1) and its blends; the keep's masonry, wood, banners, sky.
+
+permrock2 = greyrock
+snowb = snow
+coldmnt1 = slate                # as in Everfrost
+
+# Colours in this zone's art, measured from its single-material tiles:
+colour greyrock = 0.24 0.29 0.33
+colour slate = 0.47 0.52 0.52
+colour snow = 0.71 0.73 0.80
